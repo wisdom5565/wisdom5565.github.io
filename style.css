@@ -1,0 +1,548 @@
+@font-face {
+    font-family: 'IBMPlexSansKR-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/IBMPlexSansKR-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root {
+    --color-white :#fff;
+    --color-black: #000;
+    --color-beige: #ebded4;
+    --color-medium-br : #d3b094;
+    --color-brown: #704c13;
+    --color-yellow : cornsilk;
+
+    --font-large : 45px;
+    --font-medium : 22px;
+    --font-regular : 20px;
+    --font-small : 16px;
+    --font-micro : 14px;
+
+    --size-border-radius : 4px;
+    
+    --animation-duration : 300ms;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'IBMPlexSansKR-Regular', 'sans-serif';
+    margin: 0;
+}
+
+a{
+    text-decoration: none;
+    color:var(--color-brown);
+}
+
+ul {
+    padding-left: 0;
+}
+
+li {
+    list-style-type: none;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+
+h1 {
+    font-size : var(--font-large);
+    font-weight: bold;
+    color: var(--color-black);
+    margin: 16px 0;
+}
+h2 {
+    font-size : var(--font-medium);
+    color: var(--color-black);
+    margin: 8px 0;
+}
+h3 {
+    font-size : var(--font-regular);
+    color: var(--color-black);
+    margin: 8px 0;
+}
+p{
+    font-size: var(--font-regular);
+    color: var(--color-black);
+    margin: 4px 0;
+}
+
+/* Navbar  */
+#navbar {
+    position: fixed;
+    width: 100%;
+    z-index:1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding : 16px;
+    background-color: var(--color-beige);
+    transition: all var(--animation-duration) ease-in-out;
+}
+
+#navbar.navbar--bold {
+    background-color: var(--color-medium-br);
+    padding: 10px;
+}
+
+.navbar-logo {
+    font-size: var(--font-medium);
+    font-weight: bold;
+    color: var(--color-brown);
+}
+
+.navbar-menu {
+    display: flex;
+    margin: 0;
+}
+
+.navbar-menu-item {
+    padding : 8px 12px;
+    margin: 0 4px;
+    color: var(--color-brown);
+    font-size: var(--font-medium);
+    cursor: pointer;
+    border-radius: var(--size-border-radius);
+}
+/* .navbar-menu-item.clicked{
+    border:2px solid var(--color-beige);
+    border-radius: var(--size-border-radius);
+} */
+.navbar-menu-item.active {
+    border-bottom: 1px solid var(--color-white);
+}
+.navbar-menu-item:hover{
+    background-color: var(--color-beige);
+    border-radius: var(--size-border-radius);
+}
+.navbar-toggle-btn {
+    position: absolute;
+    top: 24px;
+    right: 32px;
+    font-size:24px;
+    color: var(--color-brown);
+    display: none;
+}
+
+/* Home */
+#home {
+    background: url(./images/background.png) center/cover no-repeat;
+    padding : 40px;
+    text-align: center;
+}
+
+.home-photo {
+    width: 280px;
+    height: 280px;
+}
+
+.home-title, .home-description{
+    color:var(--color-brown);
+}
+
+.home-contact {
+    color: var(--color-medium-br);
+    font-size: var(--font-regular);
+    font-weight: bold;
+    margin: 24px;
+    padding: 8px 12px;
+    border: 2px solid gainsboro;
+    border-radius: var(--size-border-radius);
+}
+
+.home-contact:hover {
+    background-color: var(--color-beige);
+}
+
+/* section 공통 */
+.section {
+    padding: 50px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.section-container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* 내 소개 */
+.about-me {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.about-photo {
+    width: 280px;
+    height: 280px;
+}
+.about-me-title, .about-me-job, .about-me-tag, .about-me-blog {
+    padding: 20px;
+    text-align: left;
+    border: 1px solid gainsboro;
+    background-color: var(--color-beige);
+    border-radius: 15px;
+}
+.about-me-tag {
+    display: flex;
+}
+
+.about-me-detail {
+    margin-left: 10px;
+}
+
+.about-me-detail:hover{
+    color: crimson;
+    transform: scale(1.2);
+}
+.about-me-blog > a {
+    color : var(--color-black);
+}
+.about-me-blog > a:hover {
+    color : crimson;
+}
+.about-majors {
+    display: flex;
+    justify-content: space-around;
+    margin: 80px 0;
+} 
+.major-icon {
+    width: 200px;
+    height: 200px;
+    line-height: 170px;
+    font-size: 70px;
+    margin: auto;
+    color: var(--color-brown);
+    margin-bottom: 10px;
+}
+.major-icon i {
+    transition: all var(--animation-duration) ease;
+}
+
+.major-icon:hover i {
+    color: var(--color-medium-br);
+    transform: rotate(-30deg) scale(1.1);
+}
+
+.major-title {
+    font-weight: bold;
+    font-size: var(--font-medium)
+}
+
+.major-title, .major-description {
+    color: var(--color-black);
+} 
+
+.job {
+    display: flex;
+    align-items: center;
+}
+.job-description {
+    margin: 0 16px;
+    text-align: left;
+}
+.job-name, .job-period {
+    color: gray;
+}
+
+.job-name {
+    font-size: var(--font-small);
+}
+
+.job-period{
+    font-size: var(--font-micro);
+}
+
+/* 기술 */
+#skills {
+    background-color: var(--color-yellow);
+}
+.skillset {
+    display: flex;
+    color: var(--color-brown);
+    margin: 20px 0;
+}
+
+.skillset-title {
+    color: var(--color-black);
+}
+
+.skillset-left {
+    flex-basis: 60%;
+    padding : 20px 40px;
+}
+
+.skill {
+    margin-bottom: 32px;
+}
+
+.skill-description{
+    display: flex;
+    justify-content: space-between;
+}
+
+.skill-bar {
+    width: 100%;
+    height: 3px;
+    background-color: var(--color-medium-br);
+}
+
+.skill-value {
+    height: 3px;
+    background-color: var(--color-brown);
+}
+
+.skillset-right {
+    flex-basis: 40%;
+}
+
+.tools, .etc {
+    padding: 20px;
+}
+
+/* 프로젝트 */
+
+.work-categories {
+    margin: 40px;
+}
+
+.category-btn {
+    border: 1px solid gainsboro;
+    border-radius: var(--size-border-radius);
+    font-size: var(--font-regular);
+    padding : 8px 48px;
+}
+
+.category-btn.selected {
+    background-color: var(--color-beige);
+}
+
+.category-btn:hover {
+    background-color: var(--color-beige);
+}
+
+.category-btn.selected .category-count,
+.category-btn:hover .category-count {
+    opacity: 1;
+    top: 0;
+}
+
+
+.category-count {
+    background-color: var(--color-medium-br);
+    border-radius: 50%;
+    color: var(--color-beige);
+    height: 24px;
+    width: 24px;
+    line-height: 24px;
+    display: inline-block;
+    position: relative;
+    top: -20px;
+    left: 4px;
+    opacity: 0;
+    transition: all var(--animation-duration) ease;
+}
+
+.work-projects {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* 프로젝트 js관련 css */
+.work-projects.anim-out {
+    opacity: 0;
+    transform: scale(0.96) translateY(40px);
+}
+
+.project.invisible {
+    display: none;
+}
+
+.project {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 280px;
+    height : 250px;
+}
+
+.project-image {
+    max-width: 100%;
+    max-height: 100%;
+    align-self: center;
+}
+
+.project-description {
+    position: absolute;
+    background-color: var(--color-beige);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    top:0;
+    left: 0;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all var(--animation-duration) ease;
+}
+
+.project:hover .project-description {
+    opacity: 0.8;
+    transform: translateY(0px);
+}
+
+.project-description h3:after {
+    content: '';
+    display: block;
+    position : relative;
+    left:50%;
+    width: 25px;
+    height: 2px;
+    margin-left: -12px;
+    margin-top: 8px;
+    background-color: var(--color-brown);
+}
+
+
+/* 추천서 */
+#testimonials {
+    background-color: var(--color-yellow);
+}
+
+.testmonials {
+    margin: 40px;
+}
+
+.testimonial {
+    display: flex;
+    margin: 32px 0;
+}
+
+.testimonial-avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+.testimonial-avatar:nth-child(odd) {
+    margin-right: 40px;
+}
+
+.testimonial-avatar:nth-child(even) {
+    margin-left: 40px;
+}
+
+.testimonial-speech-bubble {
+    padding : 18px;
+    background-color: var(--color-white);
+    border-radius: 12px;
+}
+
+.testimonial-speech-bubble p {
+    color: gray;
+}
+.testimonial-speech-bubble a {
+    color: var(--color-medium-br);
+}
+
+/* contact */ 
+#contact {
+    background-color: bisque;
+}
+.contact-title, .contact-email, .contact-rights {
+    color: var(--color-black);
+}
+
+.contact-title {
+    margin: 32px 0 ;
+}
+
+.contact-links {
+    font-size: var(--font-large);
+    margin : 24px 0 ;
+    transition: all var(--animation-duration) ease in ;
+}
+
+.contact-links i:hover {
+    transform: scale(1.1);
+    color: var(--color-yellow);
+}
+
+/* 화살표 */
+.arrow-up {
+    width: 50px;
+    height: 50px;
+    font-size: 50px;
+    color: var(--color-brown);
+    background-color: rgba(0, 0, 0, 0) ;
+    border-radius: 50%;
+    position: fixed;
+    bottom : 5px;
+    right: 10px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 300ms ease-in;
+}
+
+.arrow-up.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+
+@media screen and (max-width:768px) {
+    .navbar-toggle-btn{
+        display: block;
+    }
+
+    #navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar-menu {
+        flex-direction: column;
+        text-align: center;
+        width: 100%;
+        display: none;
+    }
+    .navbar-menu.open {
+        display:block;
+    }
+
+    .about-majors {
+        flex-direction: column;
+    }
+
+    .major {
+        margin-bottom: 38px;
+    }
+
+    .skillset {
+        flex-direction: column;
+    }
+
+    .project {
+        flex-grow:1;
+    }
+
+    .testimonial-avatar {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+
+
+
+
